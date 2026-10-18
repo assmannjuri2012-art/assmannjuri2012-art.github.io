@@ -102,6 +102,10 @@ h2 { font-size: clamp(28px, 3.6vw, 40px); margin: 0 0 10px; letter-spacing: 0.01
 .card .body { padding: 18px 20px 22px; }
 .card h3 { margin: 0 0 6px; font-size: 20px; color: var(--gold-2); }
 .card p { margin: 0; color: var(--dim); font-size: 16px; }
+/* The newest feature: one card across the whole row, picture beside the text. */
+.card.wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; }
+.card.wide .body { padding: 26px 32px; }
+.card .new { display: inline-block; margin: 0 0 10px; color: var(--pink); font-weight: 800; letter-spacing: 0.2em; font-size: 12px; text-transform: uppercase; }
 
 /* Gallery */
 .gallery { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
@@ -164,6 +168,8 @@ footer a { color: var(--dim); }
 	section { padding: 54px 0; }
 	.hero .wrap { padding-bottom: 40px; padding-top: 90px; }
 	ol.missions, .grid { grid-template-columns: 1fr; }
+	.card.wide { display: block; }
+	.card.wide .body { padding: 18px 20px 22px; }
 	.gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 	td { padding: 8px 10px; }
 }
